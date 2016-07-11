@@ -45,8 +45,12 @@ function getDefaultModules() {
         loader: 'style-loader!css-loader!stylus-loader'
       },
       {
-        test: /\.(png|jpg|gif|woff|woff2)$/,
+        test: /\.(png|jpg|gif|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'url-loader?limit=8192'
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "file-loader"
       },
       {
         test: /\.(mp4|ogg|svg)$/,
